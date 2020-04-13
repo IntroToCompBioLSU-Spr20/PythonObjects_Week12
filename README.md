@@ -1,4 +1,4 @@
-# Object-Oriented Programming
+# Object-Oriented Programming (OOP)
 
 ## What is an Object
 
@@ -10,5 +10,20 @@ When talking about creating our own objects, we will need to distinguish between
 
 The requirements of a custom type of object are entirely dependent on the goals of your code. What information does this object need in order to define itself? What actions will the object perform? A very important skill for any programmer is to be able to think about a programming goal, and break that goal down into the objects and functions that will be needed to accomplish it.
 
-## Creating Custom Objects in Python
+## Creating Custom Objects in Python (an example)
 
+Let's say we're doing a study where we collect different organisms and want to store information about them. In this case, we'll define a new `organism` class. Note how the structure of our class definition is similar to how we defined new functions, but we use the keyword `class`. Class definitions also have docstrings, like functions.
+
+After we define the class name and describe the class with a docstring, we can start to define the properties (variables) that instances of this class will have. In the case of organisms that we might collect, they could be assigned a unique `id` number, they will be assigned to a `species`, their location will be recorded with a `latitude` and `longitude`, and their characteristics will be measured and stored in `length` and `color` variables.
+
+```
+class organism:
+	"""Class to hold information about organisms I collect."""
+
+	id = ""
+	species = "" # Latin name
+	latitude = 0.0
+	longitude = 0.0
+	length = 0.0 # units are mm
+	color = ""
+```
