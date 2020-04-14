@@ -4,6 +4,9 @@
 
 [Python Class Documentation](https://docs.python.org/3/tutorial/classes.html)
 
+## Jupyter Notebook
+
+The code associated with these notes can be executed in the `CreatingPythonObjects.ipynb` notebook in this repository.
 
 ## What is an Object
 
@@ -74,7 +77,7 @@ Practice Exercise
 
 (2) Create a custom book object class that has these properties: title, author(s), publisher, year.
 
-(3) Create 5 instances of the book class and assign values
+(3) Create 3 instances of the book class and assign values
 
 (4) Create a list called `bookshelf = []` and add your books to this list.
 ```
@@ -96,7 +99,7 @@ class organism:
     color = ""
 
     def printLatLon(self):
-        """This function prints the latitude and longitude."""
+        """This method prints the latitude and longitude."""
 
         print("(%f,%f)" % (self.latitude,self.longitude))
 ```
@@ -112,6 +115,43 @@ ind_1.printLatLon()
 ```
 
 Note that the `self` variable is a special reference to that instance of the object. So, to reference a property of the object from inside one of its methods, you'll need to start that variable reference with `self.<VARIABLE>`. `self` should be the first argument to all class methods.
+
+We could also create a more comprehensive method that printed out a nicely formatted record of all information about an organism
+
+```
+class organism:
+    """Class to hold information about organisms I collect."""
+
+    id = ""
+    species = "" # Latin name
+    latitude = 0.0
+    longitude = 0.0
+    length = 0.0 # units are mm
+    color = ""
+
+    def printLatLon(self):
+        """This function prints the latitude and longitude."""
+
+        print("(%f,%f)" % (self.latitude,self.longitude))
+
+    def printSummary(self):
+        """This methods prints all info about organism."""
+
+        print("Organism %s is an individual of the species %s. It was collected at (%f,%f). It is %f mm long and is %s." % (self.id,self.species,self.latitude,self.longitude,self.length,self.color))
+
+# Let's test our new `.printSummary()` method
+ind_1 = organism()
+ind_1.id = "LSUMNS 45884"
+ind_1.species = "Hyla_cinerea"
+ind_1.latitude = 30.418419
+ind_1.longitude = -91.161132
+ind_1.length = 40.0
+ind_1.color = "green"
+
+ind_1.printSummary()
+```
+
+
 
 ## Object Constructors
 
