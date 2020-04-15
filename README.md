@@ -114,7 +114,7 @@ ind_1.longitude = -91.161132
 ind_1.printLatLon()
 ```
 
-Note that the `self` variable is a special reference to that instance of the object. So, to reference a property of the object from inside one of its methods, you'll need to start that variable reference with `self.<VARIABLE>`. `self` should be the first argument to all class methods.
+Note that the `self` variable is a special reference to that instance of the object. So, to reference a property of the object from inside one of its methods, you'll need to start that variable reference with `self.<VARIABLE>`. Also, `self` _must_ be the first argument to all class methods.
 
 We could also create a more comprehensive method that printed out a nicely formatted record of all information about an organism
 
@@ -146,7 +146,7 @@ ind_1.species = "Hyla_cinerea"
 ind_1.latitude = 30.418419
 ind_1.longitude = -91.161132
 ind_1.length = 40.0
-ind_1.color = "green"
+ind_1.codlor = "green"
 
 ind_1.printSummary()
 ```
@@ -188,13 +188,16 @@ ind_1 = organism("LSUMNS 45884",
 You can also create default values for all the variables, which are included in the list of arguments to the constructor
 
 ```
-def init(self,id="1",sp="genus_species",lat=0.0,lon=0.0,length=0.0,col"black"):
-    self.id = id
-    self.species = sp
-    self.latitude = lat
-    self.longitude = lon
-    self.length = length
-    self.color = col
+class organism:
+    """Class to hold information about organisms I collect."""
+
+    def __init__(self,id="1",sp="genus_species",lat=0.0,lon=0.0,length=0.0,col="black"):
+        self.id = id
+        self.species = sp
+        self.latitude = lat
+        self.longitude = lon
+        self.length = length
+        self.color = col
 ```
 
 You can then create new individuals without passing any arguments to the constructor and the variables will take the default values:
@@ -207,7 +210,7 @@ ind_1.id
 You can also pass just those variables you want to define, with the others taking default values:
 
 ```
-ind_1 = organism(color="green")
+ind_1 = organism(col="green")
 ind_1.id
 ind_1.color
 ```
@@ -228,5 +231,22 @@ for org in myOrganisms:
     print(org.id)
     print(org.color)
 ```
+
+We can also write custom functions that use our new objects
+
+```
+def sameSpecies(org1,org2):
+    if org1.species == org2.species:
+        return True
+    else:
+        return False
+
+sameSpecies(myOrganisms[0],myOrganisms[1])
+
+newOrg = organism(id=72,sp="Anolis_carolinensis")
+
+sameSpecies(myOrganisms[0],newOrg)
+```
+
 
 
