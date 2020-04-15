@@ -8,6 +8,10 @@
 
 The code associated with these notes can be executed in the `CreatingPythonObjects.ipynb` notebook in this repository.
 
+## Assignment
+
+This week's assignment is described in the `Week12Assignment_PythonObjects.ipynb` Jupyter notebook in the `Week12Assignments` folder. This assignment will be __due next Thursday, April 23rd by 5 PM__.
+
 ## What is an Object
 
 There are different styles for writing programs, but one very useful style is known as object-oriented programming (or OOP, for short). OOP is used in many different languages, including Python. OOP focuses on the idea of objects as the nouns of a programming language. We've already been using many of the standard object types in Python, such as integers, floats, strings, lists, tuples, and dictionaries. Nouns (objects) can be modified or used by verbs (functions and methods). Methods can be thought of as the behaviors of an object. They are actions that are intrinsic to the object itself. Functions are actions extrinsic to an object.
