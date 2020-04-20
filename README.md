@@ -10,7 +10,7 @@ The code associated with these notes can be executed in the `CreatingPythonObjec
 
 ## Assignment
 
-This week's assignment is described in the `Week12Assignment_PythonObjects.ipynb` Jupyter notebook in the `Week12Assignments` folder. This assignment will be __due next Thursday, April 23rd by 5 PM__.
+This week's assignment is described in the `Week12Assignment_PythonObjects.ipynb` Jupyter notebook in the `Week12Assignments` folder. This assignment will be __due Monday, April 27th by 5 PM__.
 
 ## What is an Object
 
