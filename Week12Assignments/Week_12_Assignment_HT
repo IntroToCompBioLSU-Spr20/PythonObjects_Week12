@@ -1,0 +1,127 @@
+# Import necessary modules
+import random
+import matplotlib.pyplot as plt
+import copy
+# Define the individual class
+
+class individual:
+    """Class to hold information about individuals within a population"""
+    # Add a docstring
+Id=1
+x=0
+y=0
+        
+    def __init__(self,id=1,x=0,y=0): # Add default values for id, x, and y
+        """Constructor method initializing the 3 attributes for class individual"""# Add a docstring
+        
+        # The constructor should initialize the 3 attributes based on the values
+        # passed as arguments to the constructor.
+        self.id = id
+        self.x = x
+        self.y = y
+
+    
+    def move(self): # Add necessary arguments
+        """Selects a random direction and updates the movement of the individual accordingly"""# Add a docstring
+        
+        # Similar to the code from week 8, the code in this method should cause an
+        # individual to move one unit up, down, left, or right (chosen randomly).
+        # The x and y coordinates for this individual should be modified accordingly.
+        dirs = ['u','d','l','r']
+        move = random.choice(dirs)
+        if move == 'u':
+            self.y += 1
+        elif move =='d':
+            self.y -= 1
+        elif move == 'l':
+            self.x -= 1
+        elif move == 'r':
+            self.x += 1
+        else:
+            print('Something went wrong!')
+
+        
+    def printLocation(self): # Add necessary arguments
+        """Method to print the text description of the location and id of each individual"""# Add a docstring
+        
+        # This method should print a text description of the 
+        # individual's id and location (x,y).
+        
+        #print("Individual, id_%s is at position (%f, %f)." % (self.id, self.x, self.y))
+        print("Individual ID %d: (%d, %d)” % (self.id,self.x,self.y))
+# Define the population class
+
+class population:
+    """Class containins many individuals in the population"""# Add a docstring
+    
+    
+    def __init__(self,mapSize=6,popSize=6): # Add default values.
+        """Constructor for each individual in the population"""# Add a docstring
+        
+        # This constructor should create a list of individuals in the population. The 
+        # number of individuals should be equal to popSize and each individual should have
+        # a unique id. The constructor should also record the mapSize as an attribute.
+        self.mapSize = mapSize
+        self.popSize = popSize
+        self.list = []
+        for ind in range(popSize):
+            self.list.append(individual(id = ind+1))
+                
+
+        
+    def move(self): # Add necessary arguments
+        """Method to move each individual in the population one unit"""# Add a docstring
+        
+        # The code in this method should use a for loop and cause each individual to 
+        # move one unit up, down, left, or right. This code should call the .move() method
+        # of each individual.
+        for ind in self.list:
+            ind.move()
+
+        
+    def listLocations(self): # Add necessary arguments
+        """Method to print a text description of the location of each individual in the population"""# Add a docstring
+
+        
+        # The code in this method should use a for loop to print a text description of
+        # each individual's location. This code should call the .printLocation() method
+        # of each individual.
+        for ind in self.list:
+            ind.printLocation()
+        
+    def draw(self): # Add necessary arguments
+        """Method to draw a scatterplot showing the location of each individual in the population"""# Add a docstring
+        
+        
+        # The code in this method should use the .plot() method from pyplot to 
+        # create a scatterplot showing the locations of all individuals in this
+        # population. The length of the x- and y-axes should each by mapSize.
+        plt.figure(figsize=(self.mapSize,self.mapSize))
+        for ind in self.list:
+            plt.plot(ind.x,ind.y,”o”)
+            plt.grid(True)
+            plt.show()
+# Create a new population with default values
+pop1 = population()
+
+# Assign the number of time steps that individuals will move
+steps = 4
+
+# Use a for loop to simulate the movement of individuals for the specified number of steps.
+for i in range(steps):
+    pop1.move()
+
+# Use the .draw() method of the population to draw the map.
+pop1.draw()
+
+# Use the .listLocations() method to list the locations of all individuals in the population.
+pop1.listLocations
+# Try creating a new population, simulating the movement of individuals, drawing a map,
+# and listing the location of individuals, but provide non-default values for the mapSize
+# and popSize of the population. Also, increase the number of time steps that individuals move.
+pop2 = population(mapSize = 10, popSize = 5)
+    steps2 = 15
+    for i in range(steps2):
+        pop2.move()
+    pop2.draw()
+    pop2.listLocations()
