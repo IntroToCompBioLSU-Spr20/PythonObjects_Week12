@@ -1,0 +1,130 @@
+# Import necessary modules (taken from Week 8)
+import random
+from copy import copy
+# Define the individual class
+
+class individual:
+    # Add a docstring
+    """Class to hold information about individuals and will contain 3 attributes"""
+
+        
+    def __init__(self,id="1", x=0.0, y=0.0 # Add default values for id, x, and y
+        # Add a docstring
+        """Assigning default values for id, x and y"""
+        self.id = id
+        self.x_value = x
+        self.y_value = y
+    
+        # The constructor should initialize the 3 attributes based on the values
+        # passed as arguments to the constructor.
+
+    
+    def move(self, distance): # Add necessary arguments
+        # Add a docstring
+        """Move this object by one unit up/down/left/right"""
+        # Similar to the code from week 8, the code in this method should cause an
+        # individual to move one unit up, down, left, or right (chosen randomly).
+        # The x and y coordinates for this individual should be modified accordingly.
+        dirs = ["u","d","l","r"]
+        move == random.choice(dirs): # Test what direction was drawn and update position accordingly
+        if move == "u":
+                 pos[1] = int(pos[1])+1\n,
+        elif move == "d":"n",
+                 pos[1] = int(pos[1])-1\n,
+        elif move == "l":"n",
+                 pos[0] = int(pos[0])+1\n,
+        elif move == "r":"n",
+                 pos[0] = int(pos[0])-1\n,
+            else:"n"
+        print("Something's wrong! Direction is not u, d, l, or r.")
+    posLog.append( copy(pos) )
+        
+    def printLocation(self,distance): # Add necessary arguments
+        # Add a docstring
+        """This prints the location and id of the individual"""
+            print("This individual's location is:", distance)
+            print("This individual's id is:", self)
+                 
+                  
+        # This method should print a text description of the 
+        # individual's id and location (x,y).
+       # Define the population class
+
+class population:
+    # Add a docstring
+    """Class to hold information about a population"""
+    
+    def __init__(self,mapSize=100,popSize=100): # Add default values.
+        # Add a docstring
+        """create a list of individuals in the population"""
+        # This constructor should create a list of individuals in the population. The 
+        # number of individuals should be equal to popSize and each individual should have
+        # a unique id. The constructor should also record the mapSize as an attribute.
+    dicts = {}
+    popSize = range(100)
+    for i in popSize:
+        for x in values:
+            dicts[i] = x
+    print(dicts)
+    popsLog.append( copy(mapSize) )
+        
+        
+    def move(self): # Add necessary arguments
+        # Add a docstring
+        """Uses for loop to cause each individual to move one unit in either direction"""
+        # The code in this method should use a for loop and cause each individual to 
+        # move one unit up, down, left, or right. This code should call the .move() method
+        # of each individual.
+        myList = []
+        dirs = ["u","d","l","r"]
+        move == random.choice(dirs): 
+            if move == "u":
+                 pos[1] = int(pos[1])+1\n,
+        elif move == "d":"n",
+                 pos[1] = int(pos[1])-1\n,
+        elif move == "l":"n",
+                 pos[0] = int(pos[0])+1\n,
+        elif move == "r":"n",
+                 pos[0] = int(pos[0])-1\n,
+            else:"n"
+        print("Something's wrong! Direction is not u, d, l, or r.")
+    posLog.append( copy(pos) )
+    
+    for self in range (1,45)
+        self.move({-5,5})
+            
+    print(self)
+    ((0,10), 15, 45)
+    
+        
+    def listLocations(self): # Add necessary arguments
+        # Add a docstring
+        """this function will be used to print a text description of each indv's location"""
+        
+        # The code in this method should use a for loop to print a text description of
+        # each individual's location. This code should call the .printLocation() method
+        # of each individual.
+print("population %s is at location (%f,%f)"% (self.x_value,self.y_value))
+ind_1 = population()
+ind_1.id = "population 1"
+ind_1.x_value = -1.1
+ind_1.y_value = 42.1
+
+print.listLocations()
+
+import matplotlib.pyplot as plt
+import numpy as np
+import copy
+    def draw(x_1,y_1): # Add necessary arguments
+        # Add a docstring
+        """this function creates a scatter plot of the individuals"""
+    x = np.linspace(1,100,100)
+    y = copy.copy(x)
+    x_1 = np.random.normal(1,45,45)
+    y_1 = np.random.normal(1,45,45)
+    plt.xlabel("individual")
+    plt.ylabel("location")
+    plt.plot(x_1,y_1,'o')
+        # The code in this method should use the .plot() method from pyplot to 
+        # create a scatterplot showing the locations of all individuals in this
+        # population. The length of the x- and y-axes should each by mapSize.
